@@ -1,0 +1,11 @@
+stages:
+- deploy
+
+Deploy to Heroku:
+  stage: deploy
+  image: ruby:latest
+  only:
+  - main
+  script:
+  - gem install dpl
+  - dpl --provider=heroku --app=ci-cd-izar --api-key=3fa71ed4-a954-49d8-863f-3c0d81e6642c
